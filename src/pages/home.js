@@ -120,7 +120,7 @@ const Home = () => {
                         localCheckedList[index]
                           ? "line-through text-gray-400/50"
                           : ""
-                      } text-xl cursor-pointer select-none`}
+                      } text-2xl cursor-pointer select-none`}
                     >
                       {trick.name}
                     </h2>
