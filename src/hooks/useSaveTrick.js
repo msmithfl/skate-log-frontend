@@ -1,9 +1,10 @@
 import axios from "axios";
+import { URL } from "../App";
 
 export const saveTrick = async (userID, trickID, isTrickSaved) => {
   if (!isTrickSaved) {
     try {
-      await axios.put("http://localhost:3001/tricks", {
+      await axios.put(`${URL}/tricks`, {
         trickID,
         userID,
       });
@@ -12,7 +13,7 @@ export const saveTrick = async (userID, trickID, isTrickSaved) => {
     }
   } else {
     try {
-      await axios.delete("http://localhost:3001/tricks", {
+      await axios.delete(`${URL}/tricks`, {
         data: { userID: userID, trickID: trickID },
       });
     } catch (err) {

@@ -1,9 +1,10 @@
 import axios from "axios";
+import { URL } from "../App";
 
 export const wishlistTrick = async (userID, trickID, isTrickWishlisted) => {
   if (!isTrickWishlisted) {
     try {
-      await axios.put("http://localhost:3001/tricks/wishlist", {
+      await axios.put(`${URL}/tricks/wishlist`, {
         trickID,
         userID,
       });
@@ -12,7 +13,7 @@ export const wishlistTrick = async (userID, trickID, isTrickWishlisted) => {
     }
   } else {
     try {
-      await axios.delete("http://localhost:3001/tricks/wishlist", {
+      await axios.delete(`${URL}/tricks/wishlist`, {
         data: { userID: userID, trickID: trickID },
       });
     } catch (err) {
